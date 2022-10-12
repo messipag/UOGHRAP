@@ -131,7 +131,7 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class
-                                       with font-awesome or any other icon font library -->
+                                                                   with font-awesome or any other icon font library -->
                             {{-- ///////////////////////////////////////////////////////////////////////////////// --}}
                             @can('dashboard')
                                 <li class="nav-item">
@@ -218,6 +218,12 @@
                                         <a href="{{ route('collages.index') }}" class="nav-link">
                                             <i class="fas fa-university nav-icon"></i>
                                             <p>Colleges</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('departments.index') }}" class="nav-link">
+                                            <i class="fas fa-book nav-icon"></i>
+                                            <p>Departments</p>
                                         </a>
                                     </li>
                                 </ul>
