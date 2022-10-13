@@ -9,6 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RankController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('collages', CollageController::class);
     Route::resource('departments', DepartmentController::class);
     Route::resource('fields', FieldOfStudyController::class);
+    Route::resource('ranks', RankController::class);
 });
