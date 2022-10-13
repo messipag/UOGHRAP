@@ -10,7 +10,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><i class="fas fa-medal"></i> Ranks</h1>
+                            <h1 class="m-0"><i class="fas fa-graduation-cap"></i> Levels of Education</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -18,7 +18,7 @@
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">
                                             <i class="fas fa-home"></i> Home</a></li>
                                 @endcan
-                                <li class="breadcrumb-item active">Rank list</li>
+                                <li class="breadcrumb-item active">Levels of Education list</li>
                             </ol>
                         </div><!-- /.col -->
                     </div>
@@ -46,20 +46,20 @@
                         <div class="col-12">
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
-                                    <h3 class="card-title">Edit <b>{{ $rank->rank }}</b> Rank </h3>
+                                    <h3 class="card-title">Edit <b>{{ $level->level }}</b> Level </h3>
                                     <span class="float-right">
 
-                                        <a class="btn btn-primary btn-sm" href="{{ route('ranks.index') }}">
+                                        <a class="btn btn-primary btn-sm" href="{{ route('levels.index') }}">
                                             <i class="fas fa-arrow-circle-left"></i> Back
                                         </a>
                                     </span>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    {!! Form::model($rank, ['route' => ['ranks.update', $rank->id], 'method' => 'PATCH']) !!}
+                                    {!! Form::model($level, ['route' => ['levels.update', $level->id], 'method' => 'PATCH']) !!}
                                     <div class="form-group">
                                         <strong>Rank:</strong>
-                                        {!! Form::text('rank', null, ['placeholder' => 'Rank', 'class' => 'form-control']) !!}
+                                        {!! Form::text('level', null, ['placeholder' => 'level', 'class' => 'form-control']) !!}
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">Update</button>
