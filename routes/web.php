@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CollageController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FieldOfStudyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
@@ -36,4 +37,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('category', CategoryController::class);
     Route::resource('collages', CollageController::class);
     Route::resource('departments', DepartmentController::class);
+    Route::resource('fields', FieldOfStudyController::class);
 });
