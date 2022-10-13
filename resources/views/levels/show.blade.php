@@ -1,7 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
-
     <div class="wrapper">
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -10,7 +8,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><i class="fas fa-medal"></i> Ranks</h1>
+                            <h1 class="m-0"><i class="fas fa-graduation-cap"></i> Levels of Education</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -18,7 +16,7 @@
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">
                                             <i class="fas fa-home"></i> Home</a></li>
                                 @endcan
-                                <li class="breadcrumb-item active">Rank list</li>
+                                <li class="breadcrumb-item active">Levels of Education list</li>
                             </ol>
                         </div><!-- /.col -->
                     </div>
@@ -27,53 +25,44 @@
 
             <!-- Main content -->
             <section class="content">
-                @if (count($errors) > 0)
-                    <div class="card-body">
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <h5><i class="icon fas fa-ban"></i> Error Message!</h5>
-                            <strong>Opps!</strong> Something went wrong, please check below errors.<br><br>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                @endif
+
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
-                                    <h3 class="card-title">Edit <b>{{ $rank->rank }}</b> Rank </h3>
+                                    <h3 class="card-title">Show <b>{{ $level->level }}</b> Detail</h3>
                                     <span class="float-right">
 
-                                        <a class="btn btn-primary btn-sm" href="{{ route('ranks.index') }}">
+
+                                        <a class="btn btn-primary btn-sm" href="{{ route('levels.index') }}">
                                             <i class="fas fa-arrow-circle-left"></i> Back
                                         </a>
                                     </span>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    {!! Form::model($rank, ['route' => ['ranks.update', $rank->id], 'method' => 'PATCH']) !!}
-                                    <div class="form-group">
+                                    <div class="lead">
                                         <strong>Rank:</strong>
-                                        {!! Form::text('rank', null, ['placeholder' => 'Rank', 'class' => 'form-control']) !!}
+                                        {{ $level->level }}
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                    {!! Form::close() !!}
+                                    <div class="lead">
+                                        <strong>Created at:</strong>
+                                        {{ $level->created_at }}
+                                    </div>
+                                    <div class="lead">
+                                        <strong>Updated at:</strong>
+                                        {{ $level->updated_at }}
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
+                                <!-- /.card -->
                             </div>
-                            <!-- /.card -->
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
+                        <!-- /.row -->
                     </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
+                    <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
